@@ -1,36 +1,37 @@
-import { Avatar } from "@material-ui/core";
+import { Avatar, Input } from "@material-ui/core";
 import { InsertEmoticon, PhotoLibrary, Videocam } from "@material-ui/icons";
 import React, { useState } from "react";
 import "./MessageSender.css";
 
 const MessageSender = () => {
   const [input, setInput] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [image, setImage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+    }
+  };
 
-    // some clever db(database) stuff
-
-    setInput("");
-    setImageUrl("");
+  const handleSubmit = () => {
+    console.log("Submitting");
   };
 
   return (
     <div className="messageSender">
       <div className="messageSender__top">
-        <Avatar />
+        <Avatar src="https://media-exp1.licdn.com/dms/image/C5603AQGxzq36_GgMYg/profile-displayphoto-shrink_200_200/0/1556770619827?e=1622678400&v=beta&t=udDg1O-hpLfEycFpaQYsJolGW8QWpDbKSXgiAcehfeM" />
         <form>
           <input
+            type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="messageSender__input"
             placeholder={`What's on your mind?`}
           />
-          <input
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            placeholder="image URL (Optional)"
+          <Input
+            type="file"
+            className="messageSender__fileSelector"
+            onChange={handleChange}
           />
 
           <button onClick={handleSubmit} type="submit">

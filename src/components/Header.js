@@ -47,7 +47,7 @@ const Header = () => {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar />
+          <Avatar src="https://media-exp1.licdn.com/dms/image/C5603AQGxzq36_GgMYg/profile-displayphoto-shrink_200_200/0/1556770619827?e=1622678400&v=beta&t=udDg1O-hpLfEycFpaQYsJolGW8QWpDbKSXgiAcehfeM" />
           <h4>Bryan Roof</h4>
         </div>
 
